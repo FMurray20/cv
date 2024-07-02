@@ -1,148 +1,96 @@
-import { Divider, Grid, Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
+import { Box, Card, Divider, Typography, ButtonGroup, Button } from '@mui/material';
+import FlourishBubbleChart from '../Components/FlourishBubbleChart.tsx';
 
 function Skills() {
-    const programmingLanguages = [
-        {
-            img: require('../Images/SkillsSection/Programming/TypescriptLogo.svg.png'),
-            title: 'TypeScript'
-        },
-        {
-            img: require('../Images/SkillsSection/Programming/JavaScript-logo.png'),
-            title: 'JavaScript'
-        },
-        {
-            img: require('../Images/SkillsSection/Programming/HTML5_logo.svg.png'),
-            title: 'HTML 5'
-        },
-        {
-            img: require('../Images/SkillsSection/Programming/CSS3Logo.png'),
-            title: 'CSS 3'
-        },
-        {
-            img: require('../Images/SkillsSection/Programming/CSharpLogo.png'),
-            title: 'C#'
-        },
-        {
-            img: require('../Images/SkillsSection/Programming/C_Logo.svg.png'),
-            title: 'C'
-        },
-        {
-            img: require('../Images/SkillsSection/Programming/Javalogo.svg.png'),
-            title: 'Java'
-        },
-        {
-            img: require('../Images/SkillsSection/Programming/PythonLogo.svg.png'),
-            title: 'Python'
-        },
-        {
-            img: require('../Images/SkillsSection/Programming/VHDLLogo.png'),
-            title: 'VHDL'
-        }
-    ]
+    const [selectedFilter, setSelectedFilter] = useState('All');
 
-    const proficientIn = [
-        {
-            img: require('../Images/SkillsSection/Proficiencies/React-icon.svg.png'),
-            title: 'React'
-        },
-        {
-            img: require('../Images/SkillsSection/Proficiencies/MOffice.png'),
-            title: 'Office 365'
-        },
-        {
-            img: require('../Images/SkillsSection/Proficiencies/Matlab_Logo.png'),
-            title: 'Matlab'
-        },
-        {
-            img: require('../Images/SkillsSection/Proficiencies/IntelliJ_Icon.svg.png'),
-            title: 'IntelliJ Idea'
-        },
-        {
-            img: require('../Images/SkillsSection/Proficiencies/VSCodeLogo.jpg'),
-            title: 'VS code'
-        }
-    ]
+    const handleFilterChange = (filter) => {
+        setSelectedFilter(filter);
+    };
 
     return (
         <div>
-            <Typography variant="h5" sx={{ pt: 2 }} gutterBottom>
-                {'Known Programming Languages:'}
-            </Typography>
-            <Divider />
-            <Grid container
-                spacing={0}
-                alignItems="center"
-                justifyContent="center">
-                {programmingLanguages.map((item) => (
-                    <Grid item
-                        key={item.title}
-                        display={'flex'}
-                        xs={4}
-                        sx={{
-                            height: 'fit-content',
-                            width: 'fit-content',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }} >
-                        <img
+            <Box sx={{ animation: 'fadeIn 0.5s ease-in-out', pt: 2 }}>
+                <Card sx={{
+                    backgroundColor: '#5E6A87',
+                    color: '#fff',
+                    textAlign: 'center',
+                    verticalAlign: 'middle',
+                    padding: 1
+                }}>
+                    <Typography variant="h5">
+                        {'Skills'}
+                    </Typography>
+                </Card>
+                <Divider sx={{ pb: 2, visibility: "hidden" }} />
+                {/* Filter Selection Section */}
+                <Box sx={{ animation: 'fadeIn 0.5s ease-in-out', textAlign: 'center', pb: 2, display: 'flex', justifyContent: 'center' }}>
+                    <ButtonGroup sx={{
+                        display: 'flex', // Ensures the button group stays inline
+                        flexWrap: 'wrap', // Allows wrapping on smaller screens
+                        justifyContent: 'center', // Centers the button group
+                        overflow: 'hidden', // Prevents overflow
+                        whiteSpace: 'nowrap', // Prevents text from wrapping
+                        '@media (max-width: 600px)': {
+                            flexDirection: 'column', // Stack buttons vertically on small screens
+                            whiteSpace: 'normal', // Allows text to wrap on small screens
+                        }
+                    }}
+                        variant="contained"
+                        aria-label="outlined primary button group"
+                    >
+                        <Button
+                            onClick={() => handleFilterChange('All')}
+                            variant={selectedFilter === 'All' ? 'contained' : 'outlined'}
+                            color={selectedFilter === 'All' ? 'primary' : 'inherit'}
                             style={{
-                                maxHeight: "30%",
-                                maxWidth: "30%",
-                                // @ts-ignore
-                                display: { xs: 'none', sm: 'block' },
-                                padding: "1em 1em 0 1em", objectFit: "contain",
-                                alignItems: 'center',
-                                justifyContent: 'center'
-
+                                backgroundColor: selectedFilter === 'All' ? '' : '#fff', // White when not selected
+                                color: selectedFilter === 'All' ? '#fff' : '#000', // Text color
                             }}
-                            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                            alt={item.title}
-                            loading="lazy"
-                        />
-                    </Grid>
-                ))}
-            </Grid>
-            <Typography variant="h5" sx={{ pt: 5 }} gutterBottom>
-                {'Proficient in:'}
-            </Typography>
-            <Divider />
-            <Grid container
-                spacing={0}
-                alignItems="center"
-                justifyContent="center">
-                {proficientIn.map((item) => (
-                    <Grid item
-                        key={item.title}
-                        display={'flex'}
-                        xs={4}
-                        sx={{
-                            height: 'fit-content',
-                            width: 'fit-content',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }} >
-                        <img
+                        >
+                            All
+                        </Button>
+                        <Button
+                            onClick={() => handleFilterChange('Programming Languages')}
+                            variant={selectedFilter === 'Programming Languages' ? 'contained' : 'outlined'}
+                            color={selectedFilter === 'Programming Languages' ? 'primary' : 'inherit'}
                             style={{
-                                maxHeight: "30%",
-                                maxWidth: "30%",
-                                // @ts-ignore
-                                display: { xs: 'none', sm: 'block' },
-                                padding: "1em 1em 0 1em", objectFit: "contain",
-                                alignItems: 'center',
-                                justifyContent: 'center'
-
+                                backgroundColor: selectedFilter === 'Programming Languages' ? '' : '#fff', // White when not selected
+                                color: selectedFilter === 'Programming Languages' ? '#fff' : '#000', // Text color
                             }}
-                            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                            alt={item.title}
-                            loading="lazy"
-                        />
-                    </Grid>
-                ))}
-            </Grid>
-        </div >
+                        >
+                            Programming Languages
+                        </Button>
+                        <Button
+                            onClick={() => handleFilterChange('Platforms')}
+                            variant={selectedFilter === 'Platforms' ? 'contained' : 'outlined'}
+                            color={selectedFilter === 'Platforms' ? 'primary' : 'inherit'}
+                            style={{
+                                backgroundColor: selectedFilter === 'Platforms' ? '' : '#fff', // White when not selected
+                                color: selectedFilter === 'Platforms' ? '#fff' : '#000', // Text color
+                            }}
+                        >
+                            Platforms
+                        </Button>
+                        <Button
+                            onClick={() => handleFilterChange('Other Skills')}
+                            variant={selectedFilter === 'Other Skills' ? 'contained' : 'outlined'}
+                            color={selectedFilter === 'Other Skills' ? 'primary' : 'inherit'}
+                            style={{
+                                backgroundColor: selectedFilter === 'Other Skills' ? '' : '#fff', // White when not selected
+                                color: selectedFilter === 'Other Skills' ? '#fff' : '#000', // Text color
+                            }}
+                        >
+                            Other Skills
+                        </Button>
+                    </ButtonGroup>
+                </Box>
+                <Card sx={{ height: '400px', overflow: 'hidden' }}>
+                    <FlourishBubbleChart filter={selectedFilter} />
+                </Card>
+            </Box>
+        </div>
     );
 }
 

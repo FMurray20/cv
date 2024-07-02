@@ -6,17 +6,17 @@ function Profile() {
     return (
         <Paper
             sx={{
+                animation: 'fadeIn 0.5s ease-in-out',
                 position: 'relative',
                 backgroundColor: 'grey.800',
                 color: '#fff',
-                mb: 4,
+                mb: 2,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: '50% 42%',
+                backgroundPosition: '100% 100%',
                 backgroundImage: `url(${require('../Images/banner.jpg')})`,
             }}
         >
-            {/* Increase the priority of the hero background image */}
             {<img style={{ display: 'none' }}
                 // @ts-ignore
                 src={require('../Images/banner.jpg')}
@@ -44,7 +44,7 @@ function Profile() {
                             Finlay Murray
                         </Typography>
                         <Typography variant="h5" color="inherit" paragraph>
-                            4th Year Computer and Electronic Systems (MEng) Student
+                            MEng in Computer and Electronic Systems with Distinction
                         </Typography>
                         <Box sx={{ pt: 2 }}>
                             <Typography fontSize={'10pt'} variant="subtitle1" color={'inherit'} paragraph>
