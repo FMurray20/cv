@@ -17,7 +17,7 @@ function Experience() {
                     </Typography>
                 </Card>
                 <Divider sx={{ pb: 2 }} />
-                <Card sx={{ position: 'relative', display: 'flex', flexDirection: { xs: 'column', sm: 'row' } }}>
+                <Card sx={{ position: 'relative', display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, animation: 'fadeIn 0.5s ease-in-out' }}>
                     <Box
                         sx={{
                             display: 'flex',
@@ -63,7 +63,7 @@ function Experience() {
                 </Card>
 
                 <Divider sx={{ pt: 2 }} />
-                <Card sx={{ position: 'relative', display: 'flex', flexDirection: { xs: 'column', sm: 'row' } }}>
+                <Card sx={{ position: 'relative', display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, animation: 'fadeIn 0.5s ease-in-out' }}>
                     <Box
                         sx={{
                             display: 'flex',
@@ -109,7 +109,7 @@ function Experience() {
                     </Box>
                 </Card>
                 <Divider sx={{ pt: 2 }} />
-                <Card sx={{ position: 'relative', display: 'flex', flexDirection: { xs: 'column', sm: 'row' } }}>
+                <Card sx={{ position: 'relative', display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, animation: 'fadeIn 0.5s ease-in-out' }}>
                     <Box
                         sx={{
                             display: 'flex',
@@ -220,7 +220,7 @@ function Experience() {
                     </Typography>
                 </Card>
                 <Divider sx={{ pb: 2 }} />
-                <Card sx={{ position: 'relative', display: 'flex', flexDirection: { xs: 'column', sm: 'row' } }}>
+                <Card sx={{ position: 'relative', display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, animation: 'fadeIn 0.5s ease-in-out' }}>
                     <Box sx={{
                         display: 'flex',
                         flexDirection: { xs: 'column', sm: 'row' },
@@ -234,7 +234,7 @@ function Experience() {
                                 Role: Staff Supervisor
                             </Typography>
                             <Typography variant="subtitle1" color="text.secondary">
-                                Fit Food Bistro Glasgow     &emsp; 20/01/2022 – current
+                                Fit Food Bistro Glasgow     &emsp; 20/01/2022 – 07/07/2024
                             </Typography>
                             <Typography variant="subtitle1" paragraph>
                                 As a staff supervisor I am primarily responsible
@@ -265,9 +265,7 @@ function Experience() {
                         />
                     </Box>
                 </Card>
-
                 <Divider sx={{ pt: 2 }} />
-
                 <Card sx={{ position: 'relative', display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, animation: 'fadeIn 0.5s ease-in-out' }}>
                     <Box
                         sx={{

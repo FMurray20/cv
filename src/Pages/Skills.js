@@ -11,7 +11,7 @@ function Skills() {
 
     return (
         <div>
-            <Box sx={{ animation: 'fadeIn 0.5s ease-in-out', pt: 2 }}>
+            <Box sx={{ pt: 2 }}>
                 <Card sx={{
                     backgroundColor: '#5E6A87',
                     color: '#fff',

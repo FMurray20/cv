@@ -1,7 +1,7 @@
 import './App.css';
 import * as React from 'react';
 import Navbar from './Components/Navbar';
-import About from './Pages/About';
+import About from './Pages/About.tsx';
 import { Box } from '@mui/system';
 import Experience from './Pages/Experience';
 import Education from './Pages/Education';
@@ -9,6 +9,7 @@ import Projects from './Pages/Projects.tsx';
 import Skills from './Pages/Skills';
 import BackgroundAnimation from './Components/BackgroundAnimation.tsx';
 import Footer from './Components/Footer.js';
+import ContactForm from './Pages/ContactFrom.js';
 
 function App() {
   const [view, setView] = React.useState(localStorage.getItem('view') || 'About'); // Default to 'About' or whatever is in localStorage
@@ -63,8 +64,13 @@ function App() {
                 <Skills />
               </Box>
             }
-            <Footer />
+            {view === 'Contact' &&
+              <Box sx={{ pt: 8 }}>
+                <ContactForm />
+              </Box>
+            }
           </div>
+          <Footer />
         </>
       }
     </>
